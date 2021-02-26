@@ -28,8 +28,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User save(User user) throws UserException {
-		// TODO Validation
+		List<User> users = repository.findAll();
+		for (User u:users) {
+			if (u.getUsername().equals(user.getUsername())){
+				throw new UserException("Username alredy exists!");
+			}
+		}
 		return repository.save(user);
+	}
+
+	@Override
+	public List<User> findAll() {
+		return repository.findAll();
 	}
 
 }

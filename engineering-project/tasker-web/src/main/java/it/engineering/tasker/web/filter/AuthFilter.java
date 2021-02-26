@@ -35,7 +35,7 @@ public class AuthFilter implements Filter {
 			if (user != null) {
 				chain.doFilter(request, response);
 			} else {
-				req.getRequestDispatcher("/index.html").forward(request, response);
+				req.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
 		}
 	}

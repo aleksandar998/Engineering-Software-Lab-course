@@ -1,23 +1,25 @@
-<%@page isELIgnored="false"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
-
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome</title>
+</head>
 <body>
-	<div>
-		<form name="form" method="post" action="login">
-			<label for="username">Username:</label> <input type="text"
-				id="username" name="username" placeholder="Username" /> <label
-				for="password">Password:</label> <input type="password"
-				id="password" name="password" placeholder="Password" /> <input
-				type="submit" value="Login" name="login" />
-		</form>
-	</div>
-	<c:if test="${errMsg != null}">
-		<div>
-			${errMsg}
-		</div>	
-	</c:if>
+
+<nav>
+	<a href="create-user.jsp">Create user</a>
+	<a href="show-users">List users</a>
+	<a href="logout">Logout</a>
+
+	Current user: ${user.name}
+</nav>
+<main>
+	<h1>Welcome!</h1>
+</main>
+
 </body>
 </html>
